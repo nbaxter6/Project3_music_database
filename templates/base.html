@@ -1,0 +1,42 @@
+<!--base html for the entire app. All other html files will link back to this file using the block method.
+This is so the general structure of the app is conserved across each page without having to rewrite everything each time-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %} - Project 3</title> <!--each page or div can have a block called 'title'-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!--links to styles.css for styling-->
+</head>
+<body>
+<!--links to the python code by calling each function name and associating a variable name to be displayed on the UI as a clickable link in the nav bar. -->
+    <nav>
+        <a href="{{ url_for('welcome') }}">Welcome</a>
+        <a href="{{ url_for('names') }}">Query Results</a>
+        <a href="{{ url_for('Info') }}">Track Info</a>
+        <a href="{{ url_for('Properties') }}">Track Properties</a>
+        <a href="{{ url_for('Listener') }}">Listener Experience</a>
+        <a href="{{ url_for('Charts') }}">Charts</a>
+        <a href="{{ url_for('Playlists') }}">Playlists</a> 
+    </nav>
+
+    <hr> <!--'horizontal row' provides a break in the layout between the nav bar and page contents-->
+
+    
+<!--Each page contains a block for content and a block for visualisations to hold the table and associated graph-->
+ <!--parent div to contain both content and visual divs so they can be formatted together in styles.css-->
+    <div class="parent">
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <div class="visual">
+            {% block visual %}{% endblock %}
+        </div>
+    </div>
+<!--solo div only on pages that dont have anything for the content and visual divs. i.e. homepage, and query page-->
+    <div class="solo">
+        {% block solo %} {% endblock %}
+    </div>
+
+</body>
+</html>
