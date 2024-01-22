@@ -112,4 +112,3 @@ o https://github.com/smiyengi
 
 
 
-![image](https://github.com/nbaxter6/Project3_music_database/assets/145720929/8f8a8d0c-fe82-4d84-9355-8cf9f1c2e460)
