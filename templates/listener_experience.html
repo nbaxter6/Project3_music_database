@@ -1,0 +1,49 @@
+<!--content for the "Listener Experience" page-->
+{% extends 'base.html' %} <!--conserves the structure of the base.html 
+    and only fills in the the section with block content and block title-->
+
+{% block content %}
+    <h1>{% block title %} Listener Experience {% endblock %}</h1>
+    <!--constructs a table to display the json file dictionaries-->
+    <table border="1">
+        <tr>
+            <th>Track Name</th>
+            <th>Artists Name</th>
+            <th>Danceability</th>
+            <th>Valence</th>
+            <th>Energy</th>
+            <th>Acousticness</th>
+            <th>Instrumentalness</th>
+            <th>Liveness</th>
+            <th>Speechiness</th>
+        </tr>
+        {% for listener in all_listener[1:] %} <!--use [1:] to skip the first line 
+            to prevent the from header being repeated twice-->
+            <tr>
+                <td>{{ listener.track_name }}</td>
+                <td>{{ listener.artists_name }}</td>
+                <td>{{ listener.danceablity }}</td>
+                <td>{{ listener.valence }}</td>
+                <td>{{ listener.energy }}</td>
+                <td>{{ listener.acousticness }}</td>
+                <td>{{ listener.instrumentalness }}</td>
+                <td>{{ listener.liveness }}</td>
+                <td>{{ listener.speechiness }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block visual %} <!--block to host the visualization assciated with the table above-->
+    
+    <div class="info-visual">
+        <h1>Acousticness vs. Energy</h1>
+        <img src="{{ url_for('static', filename='Listener_Experience.jpg') }}" alt="Listener Experience"> <!--link to the .jpg file-->
+        <p>This scatter plot proves that Energy and Acousticness are correlational in top Spotify songs that released in 2023. Energy is how intense or active a song is, and acousticness relates to songs that use instruments with minimal or no electrical interference. An example of an acoustic song is a song that uses just a guitar (no synths or "electrical" sounds). Songs that are high in energy typically are not acoustic, and songs that are high in acousticness tend not to be energetic.</p>
+        <img src="{{ url_for('static', filename='Listener_Experience_linear_regression1.jpg') }}" alt="linreg1">
+        <p>This linear regression estimates the linear relationship between Energy and Acousticness and shows a negative mathematical correlation between those two values. Meaning, there is a statistical probability that songs which are high in Acousticness tend to have low energy. The P value in this linear regression is 8.339975569548671e-86, which is extremely small. In statistical hypothesis testing, a small p-value suggests strong evidence against a null hypothesis. The null hypothesis is a statement in statistics that suggests there is no significant difference or effect. Since the p-value is low, there is a significant difference or effect between Acousticness and Energy.</p>
+        <h1>Acousticness vs. Danceability</h1>
+        <img src="{{ url_for('static', filename='Listener_Experience_linear_regression2.jpg') }}" alt="linreg2">
+        <p>This Linear Regression proves a statistically significant relationship between Danceability and Acousticness. The p-value here is 1.5160208603259472e-13 which is small, but not extremely tiny. A small p-value proves the null hypothesis wrong. Since there is a somewhat small p-value for this data, we can statistically prove there is a correlation between Danceability and Acousticness. This relationship is negative, meaning the more Acoustic a song is, the less Danceable it tends to be (according to Spotify).</p>
+    </div>    
+{% endblock %}
