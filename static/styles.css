@@ -1,0 +1,123 @@
+/*This section changes the padding/margin around the top banner */
+body, h1, h2, p {
+    margin: 10;
+    padding: 0;
+}
+
+/*This section change the body text in each page; font family and color. And the background color of the whole app*/
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url("9.jpg");
+    width: 1.0; /*set the width to 1.0 of the browser your using (value is different for some browsers)*/
+    background-color: #ffffff;
+    color: #ffffff;
+
+}
+
+/*changes the h1 headers on each page color and font*/
+h1 {
+    color: #FFFFFF;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+/*styles for the naviagation bar*/
+nav {
+    background-image: linear-gradient(#CFC7C7,#121212);
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+    text-align: center;
+    width: fit-content;
+    border-radius: 10px; /*rounded edges for the container (works on images too)*/
+}
+
+/*styles for the text within the navigation bar*/
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: auto;
+    padding: 10px;
+    font-size: 20px;
+    
+}
+
+/*styles the dividing line between the navigation bar and the page content*/
+hr {
+    margin-left: 425px;
+    margin-right: 425px;
+}
+
+/*styles for the solo block*/
+.solo {
+    background-image: linear-gradient(to bottom right, #121212,#CFC7C7);
+    padding: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin: auto;
+    margin-top: 0;
+    text-align: center;
+    width: fit-content;
+    max-width: 980px; /*constrains the width to a specific pixel count*/
+    border-radius: 20px;
+    
+}
+
+/*styles the image within the solo block*/
+.solo img {
+    border-radius: 20px;
+}
+
+/*styles for the parent container which houses the content and visual blocks*/
+.parent {
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    display: grid; /* aligns the child divs in a grid pattern*/
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 0px; 
+    width: 1.0;
+    vertical-align: middle;
+    box-sizing: border-box;
+    margin-left: 75px;
+    margin-right: 75px;
+}
+
+/*styles for the content block*/
+.content {
+    max-width: 980px;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px;
+    width: fit-content;
+    background-image: linear-gradient(to bottom right, #121212,#CFC7C7);
+    border-radius: 20px;
+    vertical-align: middle;
+    
+}
+
+/*styles for the visual block*/
+.visual {
+    display: inline-block;
+    top: 0;
+    right: 0;
+    margin-left: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    vertical-align: middle;
+}
+
+/*styles for the image within the visual block*/
+.visual img {
+    width: 90%;
+    height: auto; /*Maintain aspect ratio */
+    border-radius: 10px;
+}
+
+/*styles for the paragraph section of the visual block*/
+.info-visual p {
+    background-image: linear-gradient(to bottom left, #121212,#706C6C);
+    border-radius: 10px;
+    padding: 20px;
+}
+
