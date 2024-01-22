@@ -1,5 +1,5 @@
 
-TOP MUSIC OF 2023: A SQLITE DATABASE
+### TOP MUSIC OF 2023: A SQLITE DATABASE
 
 This project is focused on the development of a web application, served on Flask, that integrates with Python code for querying. The focus extends beyond functionality to encompass a visually appealing and user-friendly experience, achieved through the implementation of HTML and CSS for development and styling.  Additionally, SQL was utilized to create an SQLite database that forms the backbone of the application.
 
