@@ -1,0 +1,38 @@
+<!--content for the "Track Info" page-->
+{% extends 'base.html' %} <!--conserves the structure of the base.html and only fills in the the section with block content and block title-->
+
+{% block solo %} {% endblock %}
+
+{% block content %}
+    <h1>{% block title %} Tract Info {% endblock %}</h1>
+    <!--constructs a table to display the json file dictionaries-->
+    <table border="1">
+        <tr>
+            <th>Track Name</th>
+            <th>Artists Name</th>
+            <th>Artist Count</th>
+            <th>Released Year</th>
+            <th>Released Month</th>
+            <th>Released Day</th>
+        </tr>
+        {% for info in all_info[1:] %} <!--use [1:] to skip the first line to prevent the from header being repeated twice-->
+            <tr>
+                <td>{{ info.track_name }}</td>
+                <td>{{ info.artists_name }}</td>
+                <td>{{ info.artist_count }}</td>
+                <td>{{ info.released_year }}</td>
+                <td>{{ info.released_month }}</td>
+                <td>{{ info.released_day }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block visual %} <!--block to host the visualization assciated with the table above-->
+    <div class="info-visual">
+        <h1>Top 10 Artists by Track Count</h1>
+        <img src="{{ url_for('static', filename='Tract_info.jpg') }}" alt="Track info"> <!--link to the .jpg file-->
+        <p>This bar plot shows the top 10 artists who had the highest count of top Spotify tracks. With 34 tracks, Taylor Swift had the highest number of top tracks out of any other artist in 2023. The Weeknd came next with 22 tracks, followed by Bad Bunny and SZA who tied at 20. These numbers represent the number of times one of these artists had a song that appeared as a top Spotify track.</p>
+    </div>
+{% endblock %}
+

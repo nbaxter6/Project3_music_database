@@ -1,0 +1,38 @@
+<!--content for the "Charts" page-->
+{% extends 'base.html' %} <!--conserves the structure of the base.html 
+    and only fills in the the section with block content and block title-->
+
+{% block content %}
+    <h1>{% block title %} Charts {% endblock %}</h1>
+    <!--constructs a table to display the json file dictionaries-->
+    <table border="1">
+        <tr>
+            <th>Track Name</th>
+            <th>Artists Name</th>
+            <th>In Spotify Charts</th>
+            <th>In Apple Charts</th>
+            <th>In Deezer Charts</th>
+            <th>In Shazam Charts</th>
+        </tr>
+        {% for chart in all_charts[1:] %} <!--use [1:] to skip the first line 
+            to prevent the from header being repeated twice-->
+            <tr>
+                <td>{{ chart.track_name }}</td>
+                <td>{{ chart.artists_name }}</td>
+                <td>{{ chart.in_spotify_charts }}</td>
+                <td>{{ chart.in_apple_charts }}</td>
+                <td>{{ chart.in_deezer_charts }}</td>
+                <td>{{ chart.in_shazam_charts }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+{% block visual %} <!--block to host the visualization assciated with the table above-->
+    
+    <div class="info-visual">
+        <h1>Top 10 Artists in charts by Track Count</h1>
+        <img src="{{ url_for('static', filename='Charts.jpg') }}" alt="Charts Image"> <!--link to the .jpg file-->
+        <p>This bar chart shows the artists who had the most tracks in Spotify, Apple, Shazam, and Deezer charts. There were hundreds of top Spotify artists who appeared in these charts, but this visualization just isolates the top 10. Taylor Swift appeared in the most charts. The artists who had the highest number or top tracks also appeared in the most charts. Taylor Swift had the highest number of top tracks (34) and she also had 34 songs appear in either a Spotify, Apple, Shazam, or Deezer chart.</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!--content for the "Track Names page"-->
+{% extends 'base.html' %} <!--conserves the structure of the base.html and only fills in the the section with block content and block title-->
+
+{% block solo %}
+    <h1>{% block title %} Database Query Results {% endblock %}</h1>
+    <ul> <!-- unordered list for the output of the following for loop, which will iterate through all_names and print the artist's names-->
+        {% for name in all_names %}
+            <li>{{ name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

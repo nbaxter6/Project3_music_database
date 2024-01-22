@@ -1,0 +1,15 @@
+<!--This where the welcome page content is located-->
+{% extends 'base.html' %} <!--conserves the structure of the base.html and only fills in the the section with block content and block title-->
+
+{% block solo %}
+    <h1>{% block title %} Top Music of 2023: a SQLite Database {% endblock %}</h1> <!--embedded title block within the content block-->
+    
+    <h3>Group members: 
+        Susan Miyengi, Aiden Tariku, Karl Schultz, and Naomi Baxter</h2>
+    <h3></h3>
+    
+    <p>This is a paragraph!</p>
+    <hr>
+    <h3>Music database ERD</h3>
+    <img src="{{ url_for('static', filename='spotify_erd.png') }}" alt="spotify erd" style="width: 90%; height: auto;">
+{% endblock %}
