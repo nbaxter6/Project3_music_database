@@ -53,8 +53,7 @@ In this project, SQL was used since it is designed for managing and querying str
 
 
 ### Entity Relationship Diagram: 
-
- 
+![Screenshot](screenshot.png) 
 ### Data Analysis:
 
 The analysis sought to answer the following key questions:
